@@ -25,7 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   // Set up an interval to automatically go to the next slide every 30 seconds
   useEffect(() => {
-    const interval = setInterval(goToNext, 30000);
+    const interval = setInterval(goToNext, 15000);
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
