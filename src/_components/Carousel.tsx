@@ -35,8 +35,8 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
     <Carousel>
       <CarouselContent>
         {slides.map((slide, index) => (
-          <CarouselItem key={index}>
-            <div className="flex-shrink-0 w-full flex flex-col md:flex-row items-center p-4 bg-white rounded-lg">
+          <CarouselItem key={index} className="flex justify-center items-center">
+            <div className="flex-shrink-0 w-full md:w-[65%] flex flex-col md:flex-row p-4 bg-white rounded-lg">
               {/* Image section */}
               <div className="w-full md:w-1/2 order-1 md:order-2">
                 <img src={slide.imageUrl} alt={slide.title} className="w-full h-auto rounded-lg" />
