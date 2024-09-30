@@ -1,4 +1,4 @@
-export const slides = [
+export const Slides = [
     {
       imageUrl: 'https://placehold.co/600x400',
       date: '20 September 2024',

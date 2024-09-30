@@ -49,7 +49,7 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index} className="flex justify-center items-center">
-            <div className="flex-shrink-0 w-full md:w-[65%] flex flex-col md:flex-row p-4 bg-white rounded-lg">
+            <div className="flex-shrink-0 w-full md:w-[65%] flex flex-col md:flex-row p-4 dark:text-white rounded-lg">
               {/* Image section */}
               <div className="w-full md:w-1/2 order-1 md:order-2">
                 <img src={slide.imageUrl} alt={slide.title} className="w-full h-auto rounded-lg" />
@@ -57,10 +57,10 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
 
               {/* Text section */}
               <div className="w-full md:w-1/2 p-6 order-2 md:order-1">
-                <p className="text-gray-500 text-sm mb-2">{slide.date}</p>
-                <h3 className="text-2xl font-semibold mb-4">{slide.title}</h3>
-                <p className="text-gray-700 mb-6">{slide.description}</p>
-                <button className="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition">
+                <p className="text-gray-500 dark:text-gray-200 text-sm mb-2">{slide.date}</p>
+                <h3 className="text-2xl font-semibold mb-4 dark:text-white">{slide.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6">{slide.description}</p>
+                <button className="px-4 py-2 bg-neutral-800 dark:bg-slate-50 text-white dark:text-black rounded-lg hover:bg-neutral-700 dark:hover:bg-gray-200 transition">
                   Read more
                 </button>
               </div>
@@ -80,7 +80,7 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
               api?.scrollTo(index)
             }}
             className={`cursor-pointer w-3 h-3 mx-2 rounded-full hover:bg-neutral-700 transition ${
-              index === current -1 ? 'bg-black' : 'bg-gray-400'
+              index === current -1 ? 'bg-black dark:bg-white' : 'bg-gray-400 dark:bg-gray-400'
             }`}
           ></div>
         ))}

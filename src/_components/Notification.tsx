@@ -8,10 +8,10 @@ import {
 
 export function AlertDemo() {
   return (
-    <Alert>
-      <Terminal className="h-4 w-4" />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
+    <Alert className="dark:text-white">
+      <Terminal className="h-4 w-4 dark:text-white" />
+      <AlertTitle className="dark:text-white">Heads up!</AlertTitle>
+      <AlertDescription className="dark:text-white">
         Did you know that we are selling exclusive merch?
       </AlertDescription>
     </Alert>
