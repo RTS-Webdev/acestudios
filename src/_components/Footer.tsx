@@ -4,9 +4,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="text-black py-8">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 text-left">
           {/* Contact Section */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-4 mb-4">
+          <div className="col-span-1 sm:col-span-2 md:col-span-5 mb-4">
             <a href="#" className="text-black hover:underline">Questions? Contact us.</a>
           </div>
 
@@ -38,11 +38,20 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 4 */}
-          <div>
+          <div className='h-full'>
             <a href="#" className="block mb-2 hover:underline">Privacy Policy</a>
             <a href="#" className="block mb-2 hover:underline">Terms of Service</a>
             <a href="#" className="block mb-2 hover:underline">Cookie Policy</a>
             <a href="#" className="block mb-2 hover:underline">Accessibility</a>
+          </div>
+
+          {/* Logo */}
+          <div className="flex items-center sm:justify-start -ml-4 -mt-9">
+            <img
+                src="/logo.png"
+                alt="Ace Studios Logo"
+                className="w-24 h-24 md:w-32 md:h-32"
+            />
           </div>
         </div>
 
