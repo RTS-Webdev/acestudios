@@ -8,9 +8,7 @@ function App() {
       <div className="flex-grow">
         <Carousel slides={slides} />
       </div>
-      <footer className="mt-auto">
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   )
 }
