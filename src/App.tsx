@@ -4,12 +4,14 @@ import { slides } from "./_constants"
 
 function App() {
   return (
-    <>
-      <Carousel slides={slides} />
-      <footer className="bottom-0 left-0 right-0 fixed mt-10">
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <Carousel slides={slides} />
+      </div>
+      <footer className="mt-auto">
         <Footer />
       </footer>
-    </>
+    </div>
   )
 }
 
