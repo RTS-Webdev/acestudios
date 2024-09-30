@@ -4,12 +4,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="text-black py-8">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 text-left">
-          {/* Contact Section */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-5 mb-4">
-            <a href="" className="text-black hover:underline">Questions? Contact us.</a>
-          </div>
-
+        <div className="flex justify-between w-full  text-left">
+    
           {/* Column 1 */}
           <div>
             <a href="" className="block mb-2 hover:underline">About Us</a>

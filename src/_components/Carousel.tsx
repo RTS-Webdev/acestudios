@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/_components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/_components/ui/carousel";
+import Autoplay from 'embla-carousel-autoplay';
 
 // Define the Slide interface
 interface Slide {
@@ -18,7 +19,9 @@ interface CarouselProps {
 // Carousel component
 const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
   // State to keep track of the current slide
-  const [,setCurrentSlide] = useState(0);
+  const [current ,setCurrentSlide] = useState(1);
+  const [, setCount] = React.useState(0)
+  const [api, setApi] = useState<CarouselApi>(undefined);
 
   // Function to go to the next slide
   const goToNext = () => {
@@ -27,12 +30,22 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
 
   // Set up an interval to automatically go to the next slide every 30 seconds
   useEffect(() => {
-    const interval = setInterval(goToNext, 15000);
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
+    if (!api) {
+      return
+    }
+    console.log(current)
+
+    setCount(api.scrollSnapList().length)
+    setCurrentSlide(api.selectedScrollSnap() + 1)
+    api.on("select", () => {
+      setCurrentSlide(api.selectedScrollSnap() + 1)
+    })
+
+  }, [api]);
 
   return (
-    <Carousel>
+    <>
+    <Carousel setApi={setApi} opts={{ loop: true }} plugins={[Autoplay({delay: 15000})]}>
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index} className="flex justify-center items-center">
@@ -48,7 +61,7 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
                 <h3 className="text-2xl font-semibold mb-4">{slide.title}</h3>
                 <p className="text-gray-700 mb-6">{slide.description}</p>
                 <button className="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition">
-                  Læs mere
+                  Read more
                 </button>
               </div>
             </div>
@@ -58,6 +71,21 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
       <CarouselPrevious onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)} />
       <CarouselNext onClick={goToNext} />
     </Carousel>
+    <div className="flex justify-center mt-4">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => {
+              setCurrentSlide(index)
+              api?.scrollTo(index)
+            }}
+            className={`cursor-pointer w-3 h-3 mx-2 rounded-full hover:bg-neutral-700 transition ${
+              index === current -1 ? 'bg-black' : 'bg-gray-400'
+            }`}
+          ></div>
+        ))}
+      </div>
+    </>
   );
 };
 

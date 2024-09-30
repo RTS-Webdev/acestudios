@@ -12,7 +12,7 @@ export function AlertDemo() {
       <Terminal className="h-4 w-4" />
       <AlertTitle>Heads up!</AlertTitle>
       <AlertDescription>
-        You can add components to your app using the cli.
+        Did you know that we are selling exclusive merch?
       </AlertDescription>
     </Alert>
   )
