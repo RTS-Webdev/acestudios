@@ -41,8 +41,10 @@ const SliderComponent = () => {
             onClick={() => {
               setSliderValue(index)
             }}
-            className={`w-3 h-3 rounded-full cursor-pointer ${sliderValue === index ? 'bg-neutral-800 dark:bg-slate-50' : 'bg-gray-300 dark:bg-gray-700'}`}
-          />
+            className={`cursor-pointer w-3 h-3 mx-2 rounded-full hover:bg-neutral-700 transition mb-10 ${
+              index === sliderValue ? 'bg-black dark:bg-white' : 'bg-gray-400 dark:bg-gray-400'
+            }`}
+          ></div>
         ))}
       </div>
     </div>
