@@ -48,15 +48,6 @@ const Footer: React.FC = () => {
 
           {/* Column 3 */}
           <div className="mb-4 md:mb-0">
-            <a href="" className="block mb-2 hover:underline dark:text-white">Investors</a>
-            <a href="" className="block mb-2 hover:underline dark:text-white">Corporate Governance</a>
-            <a href="" className="block mb-2 hover:underline dark:text-white">Financial Reports</a>
-            <a href="" className="block mb-2 hover:underline dark:text-white">Stock Information</a>
-            <a href="" className="block mb-2 hover:underline dark:text-white">SEC Filings</a>
-          </div>
-
-          {/* Column 4 */}
-          <div className="mb-4 md:mb-0">
             <a href="" className="block mb-2 hover:underline dark:text-white">Privacy Policy</a>
             <a href="" className="block mb-2 hover:underline dark:text-white">Terms of Service</a>
             <a href="" className="block mb-2 hover:underline dark:text-white">Cookie Policy</a>
@@ -82,7 +73,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center -mt-5">
           <p className="text-sm dark:text-white">© 2024 Ace Studios. All rights reserved.</p>
         </div>
       </div>
@@ -91,6 +82,7 @@ const Footer: React.FC = () => {
       <div className="hidden md:block fixed top-4 right-4">
         <DarkMode />
       </div>
+
     </footer>
   );
 };
