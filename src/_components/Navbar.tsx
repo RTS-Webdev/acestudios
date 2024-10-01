@@ -115,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
 
                 <DarkMode className="ml-4"/>
 
-                <div className="flex flex-col items-center space-y-4 fixed right-4 top-1/2 transform -translate-y-1/2">
+                <div className="flex flex-col items-center space-y-4 fixed right-4 top-1/2 transform -translate-y-1/2 mr-5">
                     {/* Social Media Icons */}
                     <a href="" className="dark:text-white">
                         <FaFacebook className="text-black dark:text-white text-xl" />

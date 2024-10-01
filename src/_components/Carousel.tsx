@@ -79,7 +79,7 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
               setCurrentSlide(index)
               api?.scrollTo(index)
             }}
-            className={`cursor-pointer w-3 h-3 mx-2 rounded-full hover:bg-neutral-700 transition ${
+            className={`cursor-pointer w-3 h-3 mx-2 rounded-full hover:bg-neutral-700 transition mb-10 ${
               index === current -1 ? 'bg-black dark:bg-white' : 'bg-gray-400 dark:bg-gray-400'
             }`}
           ></div>
