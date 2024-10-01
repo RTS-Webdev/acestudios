@@ -7,8 +7,13 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import DarkMode from "./DarkMode";
 
-const Navbar = () => {
+interface NavbarProps {
+    setFooterHidden: (hidden: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
     const menuBlock = useRef<HTMLDivElement>(null);
     const [menuHidden, setMenuhidden] = useState(true);
     const toggleMenu = () => {
@@ -18,10 +23,12 @@ const Navbar = () => {
             menuBlock.current?.classList.remove("w-0");
             menuBlock.current?.classList.add("w-[50%]");
             setMenuhidden(false);
+            setFooterHidden(true);
         } else {
             menuBlock.current?.classList.remove("w-[50%]");
             menuBlock.current?.classList.add("w-0");
             setMenuhidden(true);
+            setFooterHidden(false);
         }
     }
 
@@ -42,9 +49,10 @@ const Navbar = () => {
     return (
         <nav className="md:hidden top-0 left-0 z-10 p-4 m-2 relative">
             {/* Mobile Navbar */}
-            <button onClick={toggleMenu}>
-                <HiMiniBars3BottomRight className="text-black dark:text-white text-xl" />
-            </button>
+            <div className="flex items-center">
+                <HiMiniBars3BottomRight className="text-black dark:text-white text-xl" onClick={toggleMenu} />
+                <DarkMode className="ml-4"/>
+            </div>
             <div className="fixed flex flex-col text-center z-10 right-0 top-0 h-screen w-0 overflow-x-hidden transition-all duration-300 ease-in bg-white dark:bg-black" ref={menuBlock}>
                 <img src={isDarkMode ? "/dark-logo.png" : "/logo.png"} alt="Ace Studios Logo" className="w-1/2 mx-auto mt-2" />
                 <div className="flex flex-col text-center mb-4 md:mb-0">
