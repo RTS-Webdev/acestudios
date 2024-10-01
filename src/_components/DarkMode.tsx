@@ -7,7 +7,29 @@ interface DarkModeProps {
 
 const DarkMode: React.FC<DarkModeProps> = ({ className }) => {
     const [isDarkMode, setIsDarkMode] = React.useState(() => document.documentElement.classList.contains('dark'));
+    React.useEffect(() => {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const handleChange = (e: MediaQueryListEvent) => {
+            setIsDarkMode(e.matches);
+            if (e.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        };
 
+        mediaQuery.addEventListener('change', handleChange);
+
+        // Set initial value
+        if (mediaQuery.matches) {
+            setIsDarkMode(true);
+            document.documentElement.classList.add('dark');
+        }
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleChange);
+        };
+    }, []);
     const toggleDarkMode = () => {
         if (isDarkMode) {
             document.documentElement.classList.remove('dark');
