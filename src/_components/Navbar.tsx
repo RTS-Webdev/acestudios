@@ -32,11 +32,15 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
         }
     }
 
-    const [isDarkMode, setIsDarkMode] = useState(document.documentElement.classList.contains('dark'));
+    const [isDarkMode, setIsDarkMode] = useState(false);
     useEffect(() => {
-        const observer = new MutationObserver(() => {
+        const updateDarkMode = () => {
             setIsDarkMode(document.documentElement.classList.contains('dark'));
-        });
+        };
+
+        updateDarkMode();
+
+        const observer = new MutationObserver(updateDarkMode);
 
         observer.observe(document.documentElement, {
             attributes: true,
@@ -54,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                     <HiMiniBars3BottomRight className="text-black dark:text-white text-xl" onClick={toggleMenu} />
                     <DarkMode className="ml-4"/>
                 </div>
-                <div className="fixed flex flex-col text-center z-10 right-0 top-0 h-screen w-0 overflow-x-hidden transition-all duration-300 ease-in bg-white dark:bg-black" ref={menuBlock}>
+                <div className="fixed flex flex-col text-center z-10 right-0 top-0 h-screen w-0 overflow-x-hidden transition-all duration-300 ease-in bg-white dark:bg-[#0a0a0a]" ref={menuBlock}>
                     <img src={isDarkMode ? "/dark-logo.png" : "/logo.png"} alt="Ace Studios Logo" className="w-1/2 mx-auto mt-2" />
                     <div className="flex flex-col text-center mb-4 md:mb-0">
                         <a href="" className="block mb-4 dark:text-white font-semibold">About Us</a>
@@ -104,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
             </nav>
 
             {/* Desktop Navbar */}
-            <nav className="hidden md:flex justify-between items-center p-4 bg-white dark:bg-black relative">
+            <nav className="hidden md:flex justify-between items-center p-4 bg-white dark:bg-[#0a0a0a] relative">
                 <div className="flex space-x-8 ml-8">
                     <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">About Us</a>
                     <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Our Team</a>
