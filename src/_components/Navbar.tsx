@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
     return (
         <>
             {/* Mobile Navbar */}
-            <nav className="md:hidden top-0 left-0 z-10 p-4 m-2 relative">
+            <nav className="md:hidden fixed top-0 left-0 z-10 p-4 w-full bg-white dark:bg-[#0a0a0a]">
                 <div className="flex items-center">
                     <HiMiniBars3BottomRight className="text-black dark:text-white text-xl" onClick={toggleMenu} />
                     <DarkMode className="ml-4"/>

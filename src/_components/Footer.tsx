@@ -9,9 +9,13 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
   const [isDarkMode, setIsDarkMode] = useState(document.documentElement.classList.contains('dark'));
 
   useEffect(() => {
-    const observer = new MutationObserver(() => {
+    const updateDarkMode = () => {
       setIsDarkMode(document.documentElement.classList.contains('dark'));
-    });
+    };
+
+    updateDarkMode();
+
+    const observer = new MutationObserver(updateDarkMode);
 
     observer.observe(document.documentElement, {
       attributes: true,
