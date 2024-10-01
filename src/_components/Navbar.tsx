@@ -78,24 +78,24 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                     </div>
                     <div className="mt-auto mb-10">
                         <div className="flex justify-center space-x-4 mb-6">
-                            <a href="" className="dark:text-white">
+                            <a href="https://www.facebook.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
                                 <FaFacebook className="text-black dark:text-white text-xl" />
                             </a>
-                            <a href="" className="dark:text-white">
+                            <a href="https://www.instagram.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
                                 <FaInstagram className="text-black dark:text-white text-xl" />
                             </a>
-                            <a href="" className="dark:text-white">
+                            <a href="https://www.linkedin.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
                                 <FaLinkedinIn className="text-black dark:text-white text-xl" />
                             </a>
                         </div>
                         <div className="flex justify-center space-x-4">
-                            <a href="" className="dark:text-white">
+                            <a href="https://www.tiktok.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
                                 <FaTiktok className="text-black dark:text-white text-xl" />
                             </a>
-                            <a href="" className="dark:text-white">
+                            <a href="https://www.twitter.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
                                 <FaXTwitter className="text-black dark:text-white text-xl" />
                             </a>
-                            <a href="" className="dark:text-white">
+                            <a href="mailto:example@gmail.com" className="dark:text-white">
                                 <SiGmail className="text-black dark:text-white text-xl" />
                             </a>
                         </div>
@@ -110,30 +110,29 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                     <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Our Team</a>
                     <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Store</a>
                     <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Contact</a>
-                    <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Careers</a>
                 </div>
 
                 <DarkMode className="ml-4"/>
 
-                <div className="flex flex-col items-center space-y-4 fixed right-4 top-1/2 transform -translate-y-1/2 mr-5">
+                <div className="flex flex-col items-center space-y-4 fixed right-4 top-1/2 transform -translate-y-1/2 mr-5 z-50">
                     {/* Social Media Icons */}
-                    <a href="" className="dark:text-white">
-                        <FaFacebook className="text-black dark:text-white text-xl" />
+                    <a href="https://www.facebook.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
+                        <FaFacebook className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>
-                    <a href="" className="dark:text-white">
-                        <FaInstagram className="text-black dark:text-white text-xl" />
+                    <a href="https://www.instagram.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>
-                    <a href="" className="dark:text-white">
-                        <FaLinkedinIn className="text-black dark:text-white text-xl" />
+                    <a href="https://www.linkedin.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedinIn className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>
-                    <a href="" className="dark:text-white">
-                        <FaTiktok className="text-black dark:text-white text-xl" />
+                    <a href="https://www.tiktok.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
+                        <FaTiktok className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>
-                    <a href="" className="dark:text-white">
-                        <FaXTwitter className="text-black dark:text-white text-xl" />
+                    <a href="https://www.twitter.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
+                        <FaXTwitter className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>
-                    <a href="" className="dark:text-white">
-                        <SiGmail className="text-black dark:text-white text-xl" />
+                    <a href="mailto:example@gmail.com" className="dark:text-white">
+                        <SiGmail className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>
                 </div>
             </nav>

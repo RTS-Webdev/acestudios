@@ -52,7 +52,7 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
             <div className="flex-shrink-0 w-full md:w-[65%] flex flex-col md:flex-row p-4 dark:text-white rounded-lg">
               {/* Image section */}
               <div className="w-full md:w-1/2 order-1 md:order-2">
-                <img src={slide.imageUrl} alt={slide.title} className="w-full h-auto rounded-lg" />
+                <img src={slide.imageUrl} alt={slide.title} className="h-auto rounded-lg w-1/2 ml-10" />
               </div>
 
               {/* Text section */}
