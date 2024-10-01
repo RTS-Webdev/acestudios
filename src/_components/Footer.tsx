@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 text-center -mt-5">
+        <div className="mt-8 text-center">
           <p className="text-sm dark:text-white">© 2024 Ace Studios. All rights reserved.</p>
         </div>
       </div>
