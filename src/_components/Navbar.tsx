@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { FaXTwitter, FaInstagram, FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DarkMode from "./DarkMode";
 
 interface NavbarProps {
