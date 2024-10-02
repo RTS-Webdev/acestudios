@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
 
   return (
     <>
-      <footer className={`text-black dark:text-white py-8 relative ${hidden ? 'hidden' : ''} hidden md:block`}>
+      <footer className={`text-black dark:text-white py-8 relative ${hidden ? 'hidden' : ''} hidden md:block fixed bottom-0 w-full`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between w-full text-left">
             <div className="mb-4 md:mb-0">
@@ -71,7 +71,7 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
           </div>
         </div>
       </footer>
-      <div className="md:block text-center mb-10">
+      <div className="md:hidden text-center mb-10 bottom-0 w-full bg-white dark:bg-[#0a0a0a] py-2">
         <p className="text-sm dark:text-white">© 2024 Ace Studios. All rights reserved.</p>
       </div>
     </>

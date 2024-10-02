@@ -1,12 +1,9 @@
 "use client"
 import { useRef, useState, useEffect } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa";
+import { FaXTwitter, FaInstagram, FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
+import { Link, useNavigate } from "react-router-dom";
 import DarkMode from "./DarkMode";
 
 interface NavbarProps {
@@ -15,10 +12,22 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
     const menuBlock = useRef<HTMLDivElement>(null);
+    const toggleButton = useRef<HTMLDivElement>(null);
     const [menuHidden, setMenuhidden] = useState(true);
+    const navigate = useNavigate();
+
+    const handleScroll = (sectionId: string) => {
+        navigate('/');
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 100);
+    };
+
     const toggleMenu = () => {
         if (!menuBlock.current) return;
-        console.log(menuHidden)
         if (menuHidden) {
             menuBlock.current?.classList.remove("w-0");
             menuBlock.current?.classList.add("w-[50%]");
@@ -31,6 +40,24 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
             setFooterHidden(false);
         }
     }
+
+    const handleClickOutside = (event: MouseEvent) => {
+        if (menuBlock.current && !menuBlock.current.contains(event.target as Node) && !toggleButton.current?.contains(event.target as Node)) {
+            toggleMenu();
+        }
+    };
+
+    useEffect(() => {
+        if (!menuHidden) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuHidden]);
 
     const [isDarkMode, setIsDarkMode] = useState(false);
     useEffect(() => {
@@ -53,31 +80,31 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
     return (
         <>
             <nav className="md:hidden top-0 left-0 z-10 p-4 m-2 relative">
-                <div className="flex items-center">
+                <div className="flex items-center" ref={toggleButton}>
                     <HiMiniBars3BottomRight className="text-black dark:text-white text-xl" onClick={toggleMenu} />
                     <DarkMode className="ml-4"/>
                 </div>
                 <div className="fixed flex flex-col text-center z-10 right-0 top-0 h-screen w-0 overflow-x-hidden transition-all duration-300 ease-in bg-white dark:bg-[#0a0a0a]" ref={menuBlock}>
                     <img src={isDarkMode ? "/dark-logo.png" : "/logo.png"} alt="Ace Studios Logo" className="w-1/2 mx-auto mt-2" />
                     <div className="flex flex-col text-center mb-4 md:mb-0">
-                        <a href="" className="block mb-4 dark:text-white font-semibold">About Us</a>
-                        <a href="" className="block mb-4 dark:text-white font-semibold">Our Team</a>
-                        <a href="" className="block mb-4 dark:text-white font-semibold">Store</a>
+                        <a onClick={() => handleScroll('about')} className="block mb-4 dark:text-white font-semibold cursor-pointer">About Us</a>
+                        <a onClick={() => handleScroll('team')} className="block mb-4 dark:text-white font-semibold cursor-pointer">Our Team</a>
+                        <Link to="/store" className="block mb-4 dark:text-white font-semibold">Store</Link> {/* Internal link */}
                         <a href="mailto:example@gmail.com" className="block mb-4 dark:text-white font-semibold">Contact</a>
-                        <a href="" className="block mb-4 dark:text-white">Careers</a>
+                        <Link to="/careers" className="block mb-4 dark:text-white">Careers</Link>
                     </div>
                     <div className="flex flex-col text-center mb-4 md:mb-0">
-                        <a href="" className="block mb-4 dark:text-white">Projects</a>
-                        <a href="" className="block mb-4 dark:text-white">Upcoming Releases</a>
-                        <a href="" className="block mb-4 dark:text-white">Awards</a>
-                        <a href="" className="block mb-4 dark:text-white">News</a>
-                        <a href="" className="block mb-4 dark:text-white">Events</a>
+                        <Link to="/projects" className="block mb-4 dark:text-white">Projects</Link>
+                        <Link to="/releases" className="block mb-4 dark:text-white">Upcoming Releases</Link>
+                        <Link to="/awards" className="block mb-4 dark:text-white">Awards</Link>
+                        <Link to="/news" className="block mb-4 dark:text-white">News</Link>
+                        <Link to="/events" className="block mb-4 dark:text-white">Events</Link>
                     </div>
                     <div className="flex flex-col text-center mmb-4 md:mb-0">
-                        <a href="" className="block mb-4 dark:text-white">Privacy Policy</a>
-                        <a href="" className="block mb-4 dark:text-white">Terms of Service</a>
-                        <a href="" className="block mb-4 dark:text-white">Cookie Policy</a>
-                        <a href="" className="block mb-4 dark:text-white">Accessibility</a>
+                        <Link to="/privacy-policy" className="block mb-4 dark:text-white">Privacy Policy</Link>
+                        <Link to="/terms-of-service" className="block mb-4 dark:text-white">Terms of Service</Link>
+                        <Link to="/cookie-policy" className="block mb-4 dark:text-white">Cookie Policy</Link>
+                        <Link to="/accessibility" className="block mb-4 dark:text-white">Accessibility</Link>
                     </div>
                     <div className="mt-auto mb-10">
                         <div className="flex justify-center space-x-4 mb-6">
@@ -108,9 +135,9 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
 
             <nav className="hidden md:flex justify-between items-center p-4 bg-white dark:bg-[#0a0a0a] relative">
                 <div className="flex space-x-8 ml-8">
-                    <a href="" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">About Us</a>
-                    <a href="" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Our Team</a>
-                    <a href="" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Store</a>
+                    <a onClick={() => handleScroll('about')} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">About Us</a>
+                    <a onClick={() => handleScroll('team')} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">Our Team</a>
+                    <Link to="/store" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Store</Link> {/* Internal link */}
                     <a href="mailto:example@gmail.com" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Contact</a>
                 </div>
 

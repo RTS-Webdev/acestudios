@@ -19,7 +19,7 @@ const SliderComponent = () => {
         <div className="w-full md:w-1/2 p-6 order-2 md:order-1">
           <p className="text-gray-500 dark:text-gray-200 text-sm mb-2">{movie.date}</p>
           <h3 className="text-2xl font-semibold mb-4 dark:text-white">
-            <span className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent'>{movie.name};</span> {movie.title}
+            <span className='text-lime-500 bg-clip-text'>{movie.name};</span> {movie.title}
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-6">{movie.description}</p>
         </div>

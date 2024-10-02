@@ -1,3 +1,11 @@
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  colors: string[];
+  image?: string;
+}
+
 export const Slides = [
   {
     imageUrl: 'assets/plakat.png',
@@ -61,38 +69,83 @@ export const Movies = [
 
 export const Members = [
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/erik.jpg',
     name: 'Erik',
     role: 'CEO',
   },
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/malak.jpg',
     name: 'Malak',
     role: 'Graphic Design Leader',
   },
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/mikkel.jpg',
     name: 'Mikkel',
     role: 'Lead Web Developer, Co-Script Writer',
   },
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/misha.jpg',
     name: 'Misha',
     role: 'Graphic Designer, Video Editor, Co-Script Writer',
   },
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/simon.jpg',
     name: 'Simon',
     role: 'Voice Actor, Team Leader, Lead Storyboard Writer, Lead Script Writer',
   },
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/smila.jpg',
     name: 'Smila',
     role: 'Graphic Designer & Animator',
   },
   {
-    image: 'https://placehold.co/100x100',
+    image: 'about/victor.jpg',
     name: 'Victor',
     role: 'Animator, Co-Storyboard Writer',
   },
 ];
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "Tote Bag",
+    price: 19.99,
+    colors: ["white", "black"],
+    image: "assets/totebag.png",
+  },
+  {
+    id: 2,
+    name: "Hoodie",
+    price: 39.99,
+    colors: ["white", "black"],
+    image: "assets/hoodie.png",
+  },
+  {
+    id: 3,
+    name: "T-Shirt",
+    price: 19.99,
+    colors: ["white", "black"],
+    image: "assets/tshirt.png",
+  },
+  {
+    id: 4,
+    name: "Cap",
+    price: 19.99,
+    colors: ["white", "black"],
+    image: "assets/cap.png",
+  },
+  {
+    id: 5,
+    name: "Cup",
+    price: 19.99,
+    colors: ["white", "black"],
+    image: "assets/cup.png",
+  },
+  {
+    id: 6,
+    name: "Exclusive Bloody Pals T-Shirt",
+    price: 21.99,
+    colors: [],
+    image: "assets/exclusive-tshirt.png",
+  },  
+]
