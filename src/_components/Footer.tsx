@@ -31,26 +31,26 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between w-full text-left">
             <div className="mb-4 md:mb-0">
-              <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">About Us</a>
-              <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">Our Team</a>
-              <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">Store</a>
-              <a href="mailto:example@gmail.com" className="block mb-2 hover:underline font-semibold dark:text-white">Contact</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Careers</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 font-semibold dark:text-white">About Us</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 font-semibold dark:text-white">Our Team</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 font-semibold dark:text-white">Store</a>
+              <a href="mailto:example@gmail.com" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 font-semibold dark:text-white">Contact</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Careers</a>
             </div>
 
             <div className="mb-4 md:mb-0">
-              <a href="" className="block mb-2 hover:underline dark:text-white">Projects</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Upcoming Releases</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Awards</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">News</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Events</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Projects</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Upcoming Releases</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Awards</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">News</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Events</a>
             </div>
 
             <div className="mb-4 md:mb-0">
-              <a href="" className="block mb-2 hover:underline dark:text-white">Privacy Policy</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Terms of Service</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Cookie Policy</a>
-              <a href="" className="block mb-2 hover:underline dark:text-white">Accessibility</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Privacy Policy</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Terms of Service</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Cookie Policy</a>
+              <a href="" className="block mb-2 hover:underline underline-offset-2 hover:underline-offset-4 dark:text-white">Accessibility</a>
 
               <div className="-ml-5 block md:hidden">
                 <img
