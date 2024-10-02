@@ -6,7 +6,11 @@ interface DarkModeProps {
 }
 
 const DarkMode: React.FC<DarkModeProps> = ({ className }) => {
-    const [isDarkMode, setIsDarkMode] = React.useState(() => document.documentElement.classList.contains('dark'));
+    const [isDarkMode, setIsDarkMode] = React.useState(() => {
+        const savedPreference = localStorage.getItem('darkMode');
+        return savedPreference ? JSON.parse(savedPreference) : document.documentElement.classList.contains('dark');
+    });
+
     React.useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e: MediaQueryListEvent) => {
@@ -30,11 +34,14 @@ const DarkMode: React.FC<DarkModeProps> = ({ className }) => {
             mediaQuery.removeEventListener('change', handleChange);
         };
     }, []);
+
     const toggleDarkMode = () => {
         if (isDarkMode) {
             document.documentElement.classList.remove('dark');
+            localStorage.setItem('darkMode', JSON.stringify(false));
         } else {
             document.documentElement.classList.add('dark');
+            localStorage.setItem('darkMode', JSON.stringify(true));
         }
         setIsDarkMode(!isDarkMode);
     };

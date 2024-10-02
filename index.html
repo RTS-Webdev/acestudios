@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ace Studios</title>
     <meta name="description" content="Ace Studios is a movie production company that produces high-quality movies.">
+    <script>
+        (function() {
+            const savedPreference = localStorage.getItem('darkMode');
+            if (savedPreference && JSON.parse(savedPreference)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
