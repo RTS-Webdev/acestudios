@@ -98,20 +98,20 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                         <a onClick={() => handleScroll('team')} className="block mb-4 dark:text-white font-semibold cursor-pointer">Our Team</a>
                         <a onClick={handleStoreClick} className="block mb-4 dark:text-white font-semibold cursor-pointer">Store</a> {/* Internal link */}
                         <a href="mailto:example@gmail.com" className="block mb-4 dark:text-white font-semibold">Contact</a>
-                        <Link to="/careers" className="block mb-4 dark:text-white">Careers</Link>
+                        <a href="" className="block mb-4 dark:text-white">Careers</a>
                     </div>
                     <div className="flex flex-col text-center mb-4 md:mb-0">
-                        <Link to="/projects" className="block mb-4 dark:text-white">Projects</Link>
-                        <Link to="/releases" className="block mb-4 dark:text-white">Upcoming Releases</Link>
-                        <Link to="/awards" className="block mb-4 dark:text-white">Awards</Link>
-                        <Link to="/news" className="block mb-4 dark:text-white">News</Link>
-                        <Link to="/events" className="block mb-4 dark:text-white">Events</Link>
+                        <a href="" className="block mb-4 dark:text-white">Projects</a>
+                        <a href="" className="block mb-4 dark:text-white">Upcoming Releases</a>
+                        <a href="" className="block mb-4 dark:text-white">Awards</a>
+                        <a href="" className="block mb-4 dark:text-white">News</a>
+                        <a href="" className="block mb-4 dark:text-white">Events</a>
                     </div>
                     <div className="flex flex-col text-center mmb-4 md:mb-0">
-                        <Link to="/privacy-policy" className="block mb-4 dark:text-white">Privacy Policy</Link>
-                        <Link to="/terms-of-service" className="block mb-4 dark:text-white">Terms of Service</Link>
-                        <Link to="/cookie-policy" className="block mb-4 dark:text-white">Cookie Policy</Link>
-                        <Link to="/accessibility" className="block mb-4 dark:text-white">Accessibility</Link>
+                        <a href="" className="block mb-4 dark:text-white">Privacy Policy</a>
+                        <a href="" className="block mb-4 dark:text-white">Terms of Service</a>
+                        <a href="" className="block mb-4 dark:text-white">Cookie Policy</a>
+                        <a href="" className="block mb-4 dark:text-white">Accessibility</a>
                     </div>
                     <div className="mt-auto mb-10">
                         <div className="flex justify-center space-x-4 mb-6">
