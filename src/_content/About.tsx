@@ -1,7 +1,7 @@
 export const About = () => {
     return (
         <div className="container mx-auto p-6">
-            <hr className="border-t-2 border-gray-100 my-8"></hr>
+            <hr className="border-t-2 border-gray-100 my-8 dark:border-zinc-700"></hr>
             <div className="container mx-auto p-6 flex justify-end">
                 <div className="max-w-2xl">
                     <h1 className="text-3xl font-bold mb-4 dark:text-white">ABOUT US</h1>
