@@ -27,7 +27,6 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
     if (!api) {
       return
     }
-    console.log(current)
 
     setCount(api.scrollSnapList().length)
     setCurrentSlide(api.selectedScrollSnap() + 1)

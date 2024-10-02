@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { FaXTwitter, FaInstagram, FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DarkMode from "./DarkMode";
 
 interface NavbarProps {
@@ -28,6 +28,13 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
 
     const handleStoreClick = () => {
         navigate('/store');
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
+
+    const handleVideosClick = () => {
+        navigate('/videos');
         setTimeout(() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 100);
@@ -97,21 +104,22 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                         <a onClick={() => handleScroll('about')} className="block mb-4 dark:text-white font-semibold cursor-pointer">About Us</a>
                         <a onClick={() => handleScroll('team')} className="block mb-4 dark:text-white font-semibold cursor-pointer">Our Team</a>
                         <a onClick={handleStoreClick} className="block mb-4 dark:text-white font-semibold cursor-pointer">Store</a> {/* Internal link */}
+                        <a onClick={handleVideosClick} className="block mb-4 dark:text-white font-semibold cursor-pointer">Videos</a> {/* Internal link */}
                         <a href="mailto:example@gmail.com" className="block mb-4 dark:text-white font-semibold">Contact</a>
-                        <a href="" className="block mb-4 dark:text-white">Careers</a>
+                        <Link to="/careers" className="block mb-4 dark:text-white">Careers</Link>
                     </div>
                     <div className="flex flex-col text-center mb-4 md:mb-0">
-                        <a href="" className="block mb-4 dark:text-white">Projects</a>
-                        <a href="" className="block mb-4 dark:text-white">Upcoming Releases</a>
-                        <a href="" className="block mb-4 dark:text-white">Awards</a>
-                        <a href="" className="block mb-4 dark:text-white">News</a>
-                        <a href="" className="block mb-4 dark:text-white">Events</a>
+                        <Link to="/projects" className="block mb-4 dark:text-white">Projects</Link>
+                        <Link to="/releases" className="block mb-4 dark:text-white">Upcoming Releases</Link>
+                        <Link to="/awards" className="block mb-4 dark:text-white">Awards</Link>
+                        <Link to="/news" className="block mb-4 dark:text-white">News</Link>
+                        <Link to="/events" className="block mb-4 dark:text-white">Events</Link>
                     </div>
                     <div className="flex flex-col text-center mmb-4 md:mb-0">
-                        <a href="" className="block mb-4 dark:text-white">Privacy Policy</a>
-                        <a href="" className="block mb-4 dark:text-white">Terms of Service</a>
-                        <a href="" className="block mb-4 dark:text-white">Cookie Policy</a>
-                        <a href="" className="block mb-4 dark:text-white">Accessibility</a>
+                        <Link to="/privacy-policy" className="block mb-4 dark:text-white">Privacy Policy</Link>
+                        <Link to="/terms-of-service" className="block mb-4 dark:text-white">Terms of Service</Link>
+                        <Link to="/cookie-policy" className="block mb-4 dark:text-white">Cookie Policy</Link>
+                        <Link to="/accessibility" className="block mb-4 dark:text-white">Accessibility</Link>
                     </div>
                     <div className="mt-auto mb-10">
                         <div className="flex justify-center space-x-4 mb-6">
@@ -145,6 +153,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                     <a onClick={() => handleScroll('about')} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">About Us</a>
                     <a onClick={() => handleScroll('team')} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">Our Team</a>
                     <a onClick={handleStoreClick} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">Store</a> {/* Internal link */}
+                    <a onClick={handleVideosClick} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">Videos</a> {/* Internal link */}
                     <a href="mailto:example@gmail.com" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Contact</a>
                 </div>
 
