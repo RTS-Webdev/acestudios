@@ -26,6 +26,13 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
         }, 100);
     };
 
+    const handleStoreClick = () => {
+        navigate('/store');
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
+
     const toggleMenu = () => {
         if (!menuBlock.current) return;
         if (menuHidden) {
@@ -89,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                     <div className="flex flex-col text-center mb-4 md:mb-0">
                         <a onClick={() => handleScroll('about')} className="block mb-4 dark:text-white font-semibold cursor-pointer">About Us</a>
                         <a onClick={() => handleScroll('team')} className="block mb-4 dark:text-white font-semibold cursor-pointer">Our Team</a>
-                        <Link to="/store" className="block mb-4 dark:text-white font-semibold">Store</Link> {/* Internal link */}
+                        <a onClick={handleStoreClick} className="block mb-4 dark:text-white font-semibold cursor-pointer">Store</a> {/* Internal link */}
                         <a href="mailto:example@gmail.com" className="block mb-4 dark:text-white font-semibold">Contact</a>
                         <Link to="/careers" className="block mb-4 dark:text-white">Careers</Link>
                     </div>
@@ -137,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                 <div className="flex space-x-8 ml-8">
                     <a onClick={() => handleScroll('about')} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">About Us</a>
                     <a onClick={() => handleScroll('team')} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">Our Team</a>
-                    <Link to="/store" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Store</Link> {/* Internal link */}
+                    <a onClick={handleStoreClick} className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200 cursor-pointer">Store</a> {/* Internal link */}
                     <a href="mailto:example@gmail.com" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Contact</a>
                 </div>
 
