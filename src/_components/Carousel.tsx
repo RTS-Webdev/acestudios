@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/_components/ui/carousel";
 import Autoplay from 'embla-carousel-autoplay';
 
-// Define the Slide interface
 interface Slide {
   imageUrl: string;
   date: string;
@@ -11,24 +10,19 @@ interface Slide {
   description: string;
 }
 
-// Define the CarouselProps interface
 interface CarouselProps {
   slides: Slide[];
 }
 
-// Carousel component
 const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
-  // State to keep track of the current slide
   const [current ,setCurrentSlide] = useState(1);
   const [, setCount] = React.useState(0)
   const [api, setApi] = useState<CarouselApi>(undefined);
 
-  // Function to go to the next slide
   const goToNext = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
-  // Set up an interval to automatically go to the next slide every 30 seconds
   useEffect(() => {
     if (!api) {
       return
@@ -50,12 +44,10 @@ const CustomCarousel: React.FC<CarouselProps> = ({ slides }) => {
         {slides.map((slide, index) => (
           <CarouselItem key={index} className="flex justify-center items-center">
             <div className="flex-shrink-0 w-full md:w-[65%] flex flex-col md:flex-row p-4 dark:text-white rounded-lg">
-              {/* Image section */}
               <div className="w-full md:w-1/2 order-1 md:order-2">
                 <img src={slide.imageUrl} alt={slide.title} className="h-auto rounded-lg w-1/2 ml-10" />
               </div>
 
-              {/* Text section */}
               <div className="w-full md:w-1/2 p-6 order-2 md:order-1">
                 <p className="text-gray-500 dark:text-gray-200 text-sm mb-2">{slide.date}</p>
                 <h3 className="text-2xl font-semibold mb-4 dark:text-white">{slide.title}</h3>

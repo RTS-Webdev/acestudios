@@ -40,3 +40,41 @@ export const Movies = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
+
+export const Members = [
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Erik',
+    role: 'CEO',
+  },
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Malak',
+    role: 'Graphic Design Leader',
+  },
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Mikkel',
+    role: 'Lead Web Developer, Co-Script Writer',
+  },
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Misha',
+    role: 'Graphic Designer, Video Editor, Co-Script Writer',
+  },
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Simon',
+    role: 'Voice Actor, Team Leader, Lead Storyboard Writer, Lead Script Writer',
+  },
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Smila',
+    role: 'Graphic Designer & Animator',
+  },
+  {
+    image: 'https://placehold.co/100x100',
+    name: 'Victor',
+    role: 'Animator, Co-Storyboard Writer',
+  },
+];

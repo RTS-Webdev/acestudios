@@ -1,4 +1,3 @@
-// SliderComponent.tsx
 import { useState } from 'react';
 import { Slider } from "@/_components/ui/slider";
 import { Movies } from '../_constants';
@@ -14,6 +13,7 @@ const SliderComponent = () => {
 
   return (
     <div className="container mx-auto p-6">
+      <hr className="border-t-2 border-gray-100 my-8"></hr>
       <h1 className="text-3xl font-bold mb-4 dark:text-white">MOVIES WE'VE HELPED PRODUCE</h1>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 p-6 order-2 md:order-1">

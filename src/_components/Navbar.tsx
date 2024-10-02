@@ -52,8 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
 
     return (
         <>
-            {/* Mobile Navbar */}
-            <nav className="md:hidden fixed top-0 left-0 z-10 p-4 w-full bg-white dark:bg-[#0a0a0a]">
+            <nav className="md:hidden top-0 left-0 z-10 p-4 m-2 relative">
                 <div className="flex items-center">
                     <HiMiniBars3BottomRight className="text-black dark:text-white text-xl" onClick={toggleMenu} />
                     <DarkMode className="ml-4"/>
@@ -64,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                         <a href="" className="block mb-4 dark:text-white font-semibold">About Us</a>
                         <a href="" className="block mb-4 dark:text-white font-semibold">Our Team</a>
                         <a href="" className="block mb-4 dark:text-white font-semibold">Store</a>
-                        <a href="" className="block mb-4 dark:text-white font-semibold">Contact</a>
+                        <a href="mailto:example@gmail.com" className="block mb-4 dark:text-white font-semibold">Contact</a>
                         <a href="" className="block mb-4 dark:text-white">Careers</a>
                     </div>
                     <div className="flex flex-col text-center mb-4 md:mb-0">
@@ -107,19 +106,17 @@ const Navbar: React.FC<NavbarProps> = ({ setFooterHidden }) => {
                 </div>
             </nav>
 
-            {/* Desktop Navbar */}
             <nav className="hidden md:flex justify-between items-center p-4 bg-white dark:bg-[#0a0a0a] relative">
                 <div className="flex space-x-8 ml-8">
-                    <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">About Us</a>
-                    <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Our Team</a>
-                    <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Store</a>
-                    <a href="" className="hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Contact</a>
+                    <a href="" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">About Us</a>
+                    <a href="" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Our Team</a>
+                    <a href="" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Store</a>
+                    <a href="mailto:example@gmail.com" className="hover:underline underline-offset-2 hover:underline-offset-4 hover:text-gray-500 dark:text-white dark:hover:text-slate-200">Contact</a>
                 </div>
 
                 <DarkMode className="ml-4"/>
 
                 <div className="flex flex-col items-center space-y-4 fixed right-4 top-1/2 transform -translate-y-1/2 mr-5 z-50">
-                    {/* Social Media Icons */}
                     <a href="https://www.facebook.com" className="dark:text-white" target="_blank" rel="noopener noreferrer">
                         <FaFacebook className="text-black dark:text-white text-2xl cursor-pointer" />
                     </a>

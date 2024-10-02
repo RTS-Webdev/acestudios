@@ -30,16 +30,14 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
       <footer className={`text-black dark:text-white py-8 relative ${hidden ? 'hidden' : ''} hidden md:block`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between w-full text-left">
-            {/* Column 1 */}
             <div className="mb-4 md:mb-0">
               <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">About Us</a>
               <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">Our Team</a>
               <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">Store</a>
-              <a href="" className="block mb-2 hover:underline font-semibold dark:text-white">Contact</a>
+              <a href="mailto:example@gmail.com" className="block mb-2 hover:underline font-semibold dark:text-white">Contact</a>
               <a href="" className="block mb-2 hover:underline dark:text-white">Careers</a>
             </div>
 
-            {/* Column 2 */}
             <div className="mb-4 md:mb-0">
               <a href="" className="block mb-2 hover:underline dark:text-white">Projects</a>
               <a href="" className="block mb-2 hover:underline dark:text-white">Upcoming Releases</a>
@@ -48,14 +46,12 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
               <a href="" className="block mb-2 hover:underline dark:text-white">Events</a>
             </div>
 
-            {/* Column 3 */}
             <div className="mb-4 md:mb-0">
               <a href="" className="block mb-2 hover:underline dark:text-white">Privacy Policy</a>
               <a href="" className="block mb-2 hover:underline dark:text-white">Terms of Service</a>
               <a href="" className="block mb-2 hover:underline dark:text-white">Cookie Policy</a>
               <a href="" className="block mb-2 hover:underline dark:text-white">Accessibility</a>
 
-              {/* Logo aligned below Accessibility only for mobile */}
               <div className="-ml-5 block md:hidden">
                 <img
                   src={isDarkMode ? "/dark-logo.png" : "/logo.png"}
@@ -65,7 +61,6 @@ const Footer: React.FC<FooterProps> = ({ hidden }) => {
               </div>
             </div>
 
-            {/* Logo for larger devices */}
             <div className="hidden md:flex items-center sm:justify-start -ml-4 -mt-9">
               <img
                 src={isDarkMode ? "/dark-logo.png" : "/logo.png"}
